@@ -86,6 +86,7 @@ class Wallet implements \Stringable
      * Set wallet name.
      *
      * @param string $name Wallet name
+     *
      * @return static
      */
     public function setName(string $name): static
@@ -109,6 +110,7 @@ class Wallet implements \Stringable
      * Set creation timestamp.
      *
      * @param \DateTimeImmutable $createdAt Creation time
+     *
      * @return static
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
@@ -132,6 +134,7 @@ class Wallet implements \Stringable
      * Set update timestamp.
      *
      * @param \DateTimeImmutable $updatedAt Update time
+     *
      * @return static
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
@@ -155,6 +158,7 @@ class Wallet implements \Stringable
      * Set wallet balance.
      *
      * @param string $balance Wallet balance
+     *
      * @return static
      */
     public function setBalance(string $balance): static
@@ -178,6 +182,7 @@ class Wallet implements \Stringable
      * Set wallet owner (user).
      *
      * @param User|null $user Wallet owner
+     *
      * @return static
      */
     public function setUser(?User $user): static

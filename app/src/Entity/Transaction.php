@@ -83,6 +83,7 @@ class Transaction
      * Set transaction ID.
      *
      * @param int $id Transaction ID
+     *
      * @return static
      */
     public function setId(int $id): static
@@ -106,6 +107,7 @@ class Transaction
      * Set amount.
      *
      * @param string $amount Transaction amount
+     *
      * @return static
      */
     public function setAmount(string $amount): static
@@ -129,6 +131,7 @@ class Transaction
      * Set createdAt timestamp.
      *
      * @param \DateTimeImmutable $createdAt Created at
+     *
      * @return static
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
@@ -152,6 +155,7 @@ class Transaction
      * Set updatedAt timestamp.
      *
      * @param \DateTimeImmutable $updatedAt Updated at
+     *
      * @return static
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
@@ -175,6 +179,7 @@ class Transaction
      * Set wallet.
      *
      * @param Wallet|null $wallet Wallet entity
+     *
      * @return static
      */
     public function setWallet(?Wallet $wallet): static
@@ -198,6 +203,7 @@ class Transaction
      * Set category.
      *
      * @param Category|null $category Category entity
+     *
      * @return static
      */
     public function setCategory(?Category $category): static
@@ -221,6 +227,7 @@ class Transaction
      * Set transaction type.
      *
      * @param string $type Transaction type
+     *
      * @return static
      */
     public function setType(string $type): static

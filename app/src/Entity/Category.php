@@ -72,6 +72,7 @@ class Category implements \Stringable
      * Setter for title.
      *
      * @param string $title Title
+     *
      * @return static
      */
     public function setTitle(string $title): static
@@ -95,6 +96,7 @@ class Category implements \Stringable
      * Setter for createdAt.
      *
      * @param \DateTimeImmutable $createdAt Created at
+     *
      * @return static
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
@@ -118,6 +120,7 @@ class Category implements \Stringable
      * Setter for updatedAt.
      *
      * @param \DateTimeImmutable $updatedAt Updated at
+     *
      * @return static
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static

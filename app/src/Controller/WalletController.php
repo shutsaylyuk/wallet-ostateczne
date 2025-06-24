@@ -164,7 +164,7 @@ class WalletController extends AbstractController
             // 🔁 Sprawdź, czy są powiązane transakcje (bez relacji obustronnej)
             $transactions = $transactionRepository->findBy(['wallet' => $wallet]);
 
-            if ($transactions !== []) {
+            if ([] !== $transactions) {
                 $this->addFlash('danger', 'wallet.delete_failed_due_to_transactions');
 
                 return $this->redirectToRoute('wallet_index');

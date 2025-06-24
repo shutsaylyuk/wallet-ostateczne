@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "091dff2fa8706f441f6c4b8a86c800d5",
+    "content-hash": "8c52eb390ec8716890851f87c04a4604",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -8439,7 +8439,7 @@
         },
         {
             "name": "escapestudios/symfony2-coding-standard",
-            "version": "3.15.0",
+            "version": "3.75",
             "source": {
                 "type": "git",
                 "url": "https://github.com/djoos/Symfony-coding-standard.git",

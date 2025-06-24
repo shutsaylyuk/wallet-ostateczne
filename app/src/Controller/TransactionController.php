@@ -28,9 +28,8 @@ class TransactionController extends AbstractController
      *
      * @param TransactionServiceInterface $transactionService Transaction service
      */
-    public function __construct(
-        private readonly TransactionServiceInterface $transactionService
-    ) {
+    public function __construct(private readonly TransactionServiceInterface $transactionService)
+    {
     }
 
     /**

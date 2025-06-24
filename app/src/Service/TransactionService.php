@@ -30,6 +30,11 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * TransactionService constructor.
+     *
+     * @param TransactionRepository  $transactionRepository
+     * @param EntityManagerInterface $entityManager
+     * @param PaginatorInterface     $paginator
+     * @param Security               $security
      */
     public function __construct(private readonly TransactionRepository $transactionRepository, private readonly EntityManagerInterface $entityManager, private readonly PaginatorInterface $paginator, private readonly Security $security)
     {
@@ -37,6 +42,10 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * Returns paginated list of user's transactions.
+     *
+     * @param int $page Page number
+     *
+     * @return PaginationInterface
      */
     public function getPaginatedList(int $page): PaginationInterface
     {
@@ -51,6 +60,11 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * Paginates a query.
+     *
+     * @param QueryBuilder $qb   QueryBuilder instance
+     * @param int          $page Page number
+     *
+     * @return PaginationInterface
      */
     public function paginate(QueryBuilder $qb, int $page): PaginationInterface
     {
@@ -59,6 +73,10 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * Saves transaction and updates wallet balance.
+     *
+     * @param Transaction $transaction Transaction entity
+     *
+     * @return void
      */
     public function save(Transaction $transaction): void
     {
@@ -92,6 +110,10 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * Deletes a transaction.
+     *
+     * @param Transaction $transaction Transaction entity
+     *
+     * @return void
      */
     public function delete(Transaction $transaction): void
     {
@@ -101,6 +123,10 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * Builds query for filtered transactions of current user.
+     *
+     * @param array $filters Filter values
+     *
+     * @return QueryBuilder
      */
     public function getFilteredQueryBuilder(array $filters): QueryBuilder
     {
@@ -138,6 +164,8 @@ class TransactionService implements TransactionServiceInterface
     /**
      * Calculates income, expense, and balance from filtered transactions.
      *
+     * @param array $filters Filter values
+     *
      * @return array<string, float>
      */
     public function calculateSummary(array $filters): array
@@ -168,6 +196,13 @@ class TransactionService implements TransactionServiceInterface
 
     /**
      * Returns balance for a given wallet and filters.
+     *
+     * @param Wallet|null             $wallet    Wallet entity
+     * @param Category|null           $category  Category entity
+     * @param string|null             $type      Transaction type
+     * @param \DateTimeImmutable|null $startDate Start date
+     * @param \DateTimeImmutable|null $endDate   End date
+     * @param User                    $user      User entity
      *
      * @return array<string, float>
      */
