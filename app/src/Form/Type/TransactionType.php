@@ -30,8 +30,6 @@ class TransactionType extends AbstractType
      *
      * @param FormBuilderInterface $builder Form builder
      * @param array<string, mixed> $options Options
-     *
-     * @return void
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -82,8 +80,6 @@ class TransactionType extends AbstractType
      * Configures form options.
      *
      * @param OptionsResolver $resolver Options resolver
-     *
-     * @return void
      */
     public function configureOptions(OptionsResolver $resolver): void
     {

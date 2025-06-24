@@ -31,10 +31,10 @@ class TransactionService implements TransactionServiceInterface
     /**
      * TransactionService constructor.
      *
-     * @param TransactionRepository  $transactionRepository
-     * @param EntityManagerInterface $entityManager
-     * @param PaginatorInterface     $paginator
-     * @param Security               $security
+     * @param TransactionRepository  $transactionRepository Transaction repository
+     * @param EntityManagerInterface $entityManager         Entity manager
+     * @param PaginatorInterface     $paginator             Paginator service
+     * @param Security               $security              Security service
      */
     public function __construct(private readonly TransactionRepository $transactionRepository, private readonly EntityManagerInterface $entityManager, private readonly PaginatorInterface $paginator, private readonly Security $security)
     {
@@ -45,7 +45,7 @@ class TransactionService implements TransactionServiceInterface
      *
      * @param int $page Page number
      *
-     * @return PaginationInterface
+     * @return PaginationInterface Paginated transactions
      */
     public function getPaginatedList(int $page): PaginationInterface
     {
@@ -64,7 +64,7 @@ class TransactionService implements TransactionServiceInterface
      * @param QueryBuilder $qb   QueryBuilder instance
      * @param int          $page Page number
      *
-     * @return PaginationInterface
+     * @return PaginationInterface Paginated result
      */
     public function paginate(QueryBuilder $qb, int $page): PaginationInterface
     {
@@ -126,7 +126,7 @@ class TransactionService implements TransactionServiceInterface
      *
      * @param array $filters Filter values
      *
-     * @return QueryBuilder
+     * @return QueryBuilder Query builder with applied filters
      */
     public function getFilteredQueryBuilder(array $filters): QueryBuilder
     {
@@ -166,7 +166,7 @@ class TransactionService implements TransactionServiceInterface
      *
      * @param array $filters Filter values
      *
-     * @return array<string, float>
+     * @return array<string, float> Summary with income, expense and saldo
      */
     public function calculateSummary(array $filters): array
     {
@@ -204,7 +204,7 @@ class TransactionService implements TransactionServiceInterface
      * @param \DateTimeImmutable|null $endDate   End date
      * @param User                    $user      User entity
      *
-     * @return array<string, float>
+     * @return array<string, float> Balance summary
      */
     public function getBalance(?Wallet $wallet, ?Category $category, ?string $type, ?\DateTimeImmutable $startDate, ?\DateTimeImmutable $endDate, User $user): array
     {

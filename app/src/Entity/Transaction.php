@@ -23,49 +23,28 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'transaction')]
 class Transaction
 {
-    /**
-     * Primary key.
-     */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    /**
-     * Transaction amount (decimal as string).
-     */
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $amount = null;
 
-    /**
-     * Creation timestamp.
-     */
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    /**
-     * Last update timestamp.
-     */
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    /**
-     * Associated wallet.
-     */
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Wallet $wallet = null;
 
-    /**
-     * Associated category.
-     */
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
-    /**
-     * Transaction type (e.g. 'income' or 'expense').
-     */
     #[ORM\Column(length: 10)]
     private ?string $type = null;
 

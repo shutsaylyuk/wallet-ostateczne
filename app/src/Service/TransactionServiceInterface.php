@@ -29,8 +29,6 @@ interface TransactionServiceInterface
      * Returns paginated list of transactions.
      *
      * @param int $page Page number
-     *
-     * @return PaginationInterface
      */
     public function getPaginatedList(int $page): PaginationInterface;
 
@@ -38,8 +36,6 @@ interface TransactionServiceInterface
      * Saves a transaction and updates wallet balance.
      *
      * @param Transaction $transaction Transaction entity
-     *
-     * @return void
      */
     public function save(Transaction $transaction): void;
 
@@ -47,8 +43,6 @@ interface TransactionServiceInterface
      * Deletes a transaction.
      *
      * @param Transaction $transaction Transaction entity
-     *
-     * @return void
      */
     public function delete(Transaction $transaction): void;
 
@@ -70,8 +64,6 @@ interface TransactionServiceInterface
      * Returns a query builder with filters for transactions.
      *
      * @param array $filters Filter values
-     *
-     * @return QueryBuilder
      */
     public function getFilteredQueryBuilder(array $filters): QueryBuilder;
 

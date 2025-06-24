@@ -23,41 +23,23 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'wallet')]
 class Wallet implements \Stringable
 {
-    /**
-     * Primary key.
-     */
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    /**
-     * Wallet name.
-     */
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    /**
-     * Creation timestamp.
-     */
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    /**
-     * Update timestamp.
-     */
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    /**
-     * Wallet balance (as string).
-     */
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $balance = null;
 
-    /**
-     * Owner user.
-     */
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
