@@ -1,0 +1,137 @@
+   1) src/Controller/CategoryController.php (yoda_style)
+   2) src/Controller/WalletController.php (yoda_style)
+
+Found 2 of 38 files that can be fixed in 4.995 seconds, 18.00 MB memory used
+WARNING: The Symfony standard uses 1 deprecated sniff
+-------------------------------------------------------------------------------
+-  Generic.Functions.CallTimePassByReference
+   This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
+
+Deprecated sniffs are still run, but will stop working at some point in the future.
+
+
+FILE: /home/wwwroot/app/src/Controller/CategoryController.php
+----------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ 132 | ERROR | Use Yoda conditions when checking a variable against an expression to avoid an accidental assignment inside the condition statement.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Controller/WalletController.php
+----------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ 167 | ERROR | Use Yoda conditions when checking a variable against an expression to avoid an accidental assignment inside the condition statement.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Entity/Category.php
+----------------------------------------------------------------------
+FOUND 4 ERRORS AFFECTING 4 LINES
+----------------------------------------------------------------------
+  75 | ERROR | Missing @return tag in function comment
+  97 | ERROR | Missing @return tag in function comment
+ 119 | ERROR | Missing @return tag in function comment
+ 129 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Entity/Transaction.php
+----------------------------------------------------------------------
+FOUND 7 ERRORS AFFECTING 7 LINES
+----------------------------------------------------------------------
+  86 | ERROR | Missing @return tag in function comment
+ 108 | ERROR | Missing @return tag in function comment
+ 130 | ERROR | Missing @return tag in function comment
+ 152 | ERROR | Missing @return tag in function comment
+ 174 | ERROR | Missing @return tag in function comment
+ 196 | ERROR | Missing @return tag in function comment
+ 218 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Entity/Wallet.php
+----------------------------------------------------------------------
+FOUND 7 ERRORS AFFECTING 7 LINES
+----------------------------------------------------------------------
+  89 | ERROR | Missing @return tag in function comment
+ 107 | ERROR | Doc comment for parameter "$createdAt" missing
+ 109 | ERROR | Missing @return tag in function comment
+ 127 | ERROR | Doc comment for parameter "$updatedAt" missing
+ 129 | ERROR | Missing @return tag in function comment
+ 151 | ERROR | Missing @return tag in function comment
+ 173 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Service/TransactionService.php
+--------------------------------------------------------------------------
+FOUND 20 ERRORS AFFECTING 11 LINES
+--------------------------------------------------------------------------
+  31 | ERROR | Doc comment for parameter "$transactionRepository" missing
+  31 | ERROR | Doc comment for parameter "$entityManager" missing
+  31 | ERROR | Doc comment for parameter "$paginator" missing
+  31 | ERROR | Doc comment for parameter "$security" missing
+  38 | ERROR | Doc comment for parameter "$page" missing
+  40 | ERROR | Missing @return tag in function comment
+  52 | ERROR | Doc comment for parameter "$qb" missing
+  52 | ERROR | Doc comment for parameter "$page" missing
+  54 | ERROR | Missing @return tag in function comment
+  60 | ERROR | Doc comment for parameter "$transaction" missing
+  93 | ERROR | Doc comment for parameter "$transaction" missing
+ 102 | ERROR | Doc comment for parameter "$filters" missing
+ 104 | ERROR | Missing @return tag in function comment
+ 138 | ERROR | Doc comment for parameter "$filters" missing
+ 169 | ERROR | Doc comment for parameter "$wallet" missing
+ 169 | ERROR | Doc comment for parameter "$category" missing
+ 169 | ERROR | Doc comment for parameter "$type" missing
+ 169 | ERROR | Doc comment for parameter "$startDate" missing
+ 169 | ERROR | Doc comment for parameter "$endDate" missing
+ 169 | ERROR | Doc comment for parameter "$user" missing
+--------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Service/TransactionServiceInterface.php
+----------------------------------------------------------------------
+FOUND 11 ERRORS AFFECTING 6 LINES
+----------------------------------------------------------------------
+ 28 | ERROR | Doc comment for parameter "$page" missing
+ 33 | ERROR | Doc comment for parameter "$transaction" missing
+ 38 | ERROR | Doc comment for parameter "$transaction" missing
+ 43 | ERROR | Doc comment for parameter "$wallet" missing
+ 43 | ERROR | Doc comment for parameter "$category" missing
+ 43 | ERROR | Doc comment for parameter "$type" missing
+ 43 | ERROR | Doc comment for parameter "$startDate" missing
+ 43 | ERROR | Doc comment for parameter "$endDate" missing
+ 43 | ERROR | Doc comment for parameter "$user" missing
+ 50 | ERROR | Doc comment for parameter "$filters" missing
+ 55 | ERROR | Doc comment for parameter "$filters" missing
+----------------------------------------------------------------------
+
+Time: 11.66 secs; Memory: 10MB
+
+ ----------- ---------- ------------------------- ------------------------- 
+  State       Domain     Id                        Message Preview (en)     
+ ----------- ---------- ------------------------- ------------------------- 
+   missing    messages   category.create.title     category.create.title    
+   missing    messages   category.create.heading   category.create.heading  
+ ----------- ---------- ------------------------- ------------------------- 
+
+ ----------- ---------- ------------------------- ------------------------- ------------------------------- 
+  State       Domain     Id                        Message Preview (pl)      Fallback Message Preview (en)  
+ ----------- ---------- ------------------------- ------------------------- ------------------------------- 
+   missing    messages   category.create.title     category.create.title     category.create.title          
+   missing    messages   category.create.heading   category.create.heading   category.create.heading        
+ ----------- ---------- ------------------------- ------------------------- ------------------------------- 
+
+[notice] Migrating up to DoctrineMigrations\Version20250621214314
+[notice] finished in 2370.3ms, used 24M memory, 1 migrations executed, 8 sql queries
+
+ [OK] Successfully migrated to version: DoctrineMigrations\Version20250621214314                                        
+
+
+   > purging database
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\TransactionFixtures

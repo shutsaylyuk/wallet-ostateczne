@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+       xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="validators">
+    <body>
+
+<trans-unit id="form.admin_account.email_not_blank">
+  <source>form.admin_account.email_not_blank</source>
+  <target>Email address cannot be blank.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_account.password_min_length">
+  <source>form.admin_account.password_min_length</source>
+  <target>Password must be at least 8 characters long.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_email.email_not_blank">
+  <source>form.admin_email.email_not_blank</source>
+  <target>Please enter your email address.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_email.email_invalid">
+  <source>form.admin_email.email_invalid</source>
+  <target>Invalid email address.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password_not_blank">
+  <source>form.admin_password.password_not_blank</source>
+  <target>Please enter a password.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password_too_short">
+  <source>form.admin_password.password_too_short</source>
+  <target>The password is too short.</target>
+</trans-unit>
+
+<trans-unit id="form.category.title_not_blank">
+  <source>form.category.title_not_blank</source>
+  <target>The title cannot be blank.</target>
+</trans-unit>
+
+    </body>
+  </file>
+</xliff>

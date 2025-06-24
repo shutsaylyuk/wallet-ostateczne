@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'category.show.title'|trans({'%title%': category.title}) }}{% endblock %}
+
+{% block body %}
+    <h1 class="mb-4">{{ 'category.show.heading'|trans({'%title%': category.title}) }}</h1>
+
+    <div class="card shadow-sm p-4 bg-white rounded">
+        <p><strong>{{ 'category.show.created'|trans }}:</strong> {{ category.createdAt|format_date('long')}}</p>
+        <p><strong>{{ 'category.show.updated'|trans }}:</strong> {{ category.updatedAt|format_date('long')}}</p>
+    </div>
+
+    <div class="mt-4 d-flex gap-2 flex-wrap">
+        <a href="{{ path('category_edit', {id: category.id}) }}" class="btn btn-primary">
+            <i class="bi bi-pencil"></i> {{ 'action.edit'|trans }}
+        </a>
+        <a href="{{ path('category_index') }}" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left-circle"></i> {{ 'action.back'|trans }}
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'transaction.delete.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h2>{{ 'transaction.delete.heading'|trans }}</h2>
+
+        <p>
+            {{ 'transaction.delete.confirmation'|trans({
+                '%amount%': transaction.amount|number_format(2, '.', ' ')
+            }) }}
+        </p>
+
+        {{ form_start(form) }}
+        <button type="submit" class="btn btn-danger">
+            {{ 'button.confirm_delete'|trans }}
+        </button>
+        <a href="{{ path('transaction_index') }}" class="btn btn-secondary">
+            {{ 'button.cancel'|trans }}
+        </a>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

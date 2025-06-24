@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'admin.profile.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4" style="max-width: 700px;">
+        <h2 class="mb-4">{{ 'admin.profile.heading'|trans }}</h2>
+
+        <div class="card shadow-sm p-4 bg-white rounded mb-5">
+            <h5 class="mb-3">{{ 'admin.profile.change_email'|trans }}</h5>
+
+            {{ form_start(emailForm, {'attr': {'class': 'row g-3'}}) }}
+            <div class="col-12">
+                {{ form_row(emailForm.email, {
+                    'label': 'form.user.email'|trans,
+                    'attr': {'class': 'form-control'},
+                    'label_attr': {'class': 'form-label'}
+                }) }}
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" name="email_submit">
+                    <i class="bi bi-envelope"></i> {{ 'admin.profile.save_email'|trans }}
+                </button>
+            </div>
+            {{ form_end(emailForm) }}
+        </div>
+
+        <div class="card shadow-sm p-4 bg-white rounded">
+            <h5 class="mb-3">{{ 'admin.profile.change_password'|trans }}</h5>
+
+            {{ form_start(passwordForm, {'attr': {'class': 'row g-3'}}) }}
+            <div class="col-12">
+                {{ form_row(passwordForm.plainPassword, {
+                    'label': 'form.user.password'|trans,
+                    'attr': {'class': 'form-control'},
+                    'label_attr': {'class': 'form-label'}
+                }) }}
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" name="password_submit">
+                    <i class="bi bi-lock"></i> {{ 'admin.profile.save_password'|trans }}
+                </button>
+            </div>
+            {{ form_end(passwordForm) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'category.delete.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">{{ 'category.delete.heading'|trans }}</h1>
+
+        <div class="alert alert-warning text-center">
+            {{ 'category.delete.confirmation'|trans({'%title%': category.title}) }}
+        </div>
+
+        <div class="d-flex justify-content-center">
+            {{ form_start(form) }}
+            <button type="submit" class="btn btn-danger me-3">
+                🗑️ {{ 'action.confirm_delete'|trans }}
+            </button>
+            <a href="{{ path('category_index') }}" class="btn btn-secondary">
+                {{ 'action.cancel'|trans }}
+            </a>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

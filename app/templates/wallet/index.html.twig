@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'wallet.index_title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">{{ 'wallet.index_heading'|trans }}</h1>
+
+        <div class="alert alert-light text-center shadow-sm mb-4" style="font-size: 1.2rem;">
+            {{ 'wallet.total_balance'|trans }}: <strong>{{ totalBalance|number_format(2, '.', ' ') }} zł</strong>
+        </div>
+
+        <div class="d-flex justify-content-end mb-3">
+            <a href="{{ path('wallet_create') }}" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> {{ 'wallet.action_add'|trans }}
+            </a>
+        </div>
+
+        <table class="table table-bordered table-hover align-middle text-center shadow-sm">
+            <thead class="table-light">
+            <tr>
+                <th>{{ 'wallet.name'|trans }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'wallet.balance'|trans, 'w.balance') }}</th>
+                <th>{{ 'wallet.created_at'|trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for wallet in pagination %}
+                <tr>
+                    <td>{{ wallet.name }}</td>
+                    <td>{{ wallet.balance|number_format(2, '.', ' ') }} zł</td>
+                    <td>{{ wallet.createdAt ? wallet.createdAt|date('Y-m-d H:i') : '' }}</td>
+                    <td class="text-nowrap">
+                        <a href="{{ path('wallet_show', {'id': wallet.id}) }}" title="{{ 'action.show'|trans }}" class="text-primary me-2">
+                            <i class="bi bi-eye fs-5"></i>
+                        </a>
+                        <a href="{{ path('wallet_edit', {'id': wallet.id}) }}" title="{{ 'action.edit'|trans }}" class="text-warning me-2">
+                            <i class="bi bi-pencil-square fs-5"></i>
+                        </a>
+                        <a href="{{ path('wallet_delete', {'id': wallet.id}) }}" title="{{ 'action.delete'|trans }}" class="text-danger">
+                            <i class="bi bi-trash fs-5"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">{{ 'wallet.empty'|trans }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-center mt-4">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

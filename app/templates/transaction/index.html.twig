@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'transaction.index.title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'transaction.index.heading'|trans }}</h1>
+
+    {{ form_start(form, { method: 'GET' }) }}
+    <div class="row g-3 align-items-center mb-4">
+        <div class="col-md-2">
+            <label class="form-label mb-1" for="filter_type">{{ 'form.transaction_filter.type'|trans }}</label>
+            {{ form_widget(form.type, {
+                attr: { class: 'form-select form-select-sm', id: 'filter_type' }
+            }) }}
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label mb-1" for="filter_wallet">{{ 'form.transaction_filter.wallet'|trans }}</label>
+            {{ form_widget(form.wallet, {
+                attr: { class: 'form-select form-select-sm', id: 'filter_wallet' }
+            }) }}
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label mb-1" for="filter_category">{{ 'form.transaction_filter.category'|trans }}</label>
+            {{ form_widget(form.category, {
+                attr: { class: 'form-select form-select-sm', id: 'filter_category' }
+            }) }}
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label mb-1" for="filter_date_from">{{ 'form.transaction_filter.date_from'|trans }}</label>
+            {{ form_widget(form.date_from, {
+                attr: { class: 'form-control form-control-sm', id: 'filter_date_from' }
+            }) }}
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label mb-1" for="filter_date_to">{{ 'form.transaction_filter.date_to'|trans }}</label>
+            {{ form_widget(form.date_to, {
+                attr: { class: 'form-control form-control-sm', id: 'filter_date_to' }
+            }) }}
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label d-block invisible">⠀</label>
+            <button type="submit" class="btn btn-primary btn-sm w-100">
+                {{ 'button.filter'|trans }}
+            </button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+    <a href="{{ path('transaction_create') }}" class="btn btn-success mb-3">
+        <i class="bi bi-plus-circle"></i> {{ 'button.add_transaction'|trans }}
+    </a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{ 'label.amount'|trans }}</th>
+            <th>{{ 'label.type'|trans }}</th>
+            <th>{{ 'label.category'|trans }}</th>
+            <th>{{ 'label.wallet'|trans }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'label.created_at'|trans, 't.createdAt') }}</th>
+            <th>{{ 'label.actions'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for transaction in pagination %}
+            <tr>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ ('form.transaction.' ~ transaction.type)|trans }}</td>
+                <td>{{ transaction.category.title }}</td>
+                <td>{{ transaction.wallet.name }}</td>
+                <td>{{ transaction.createdAt|format_date('long') }}</td>
+                <td>
+                    <a href="{{ path('transaction_show', {id: transaction.id}) }}" class="btn btn-outline-secondary btn-sm" title="{{ 'button.show'|trans }}">
+                        <i class="bi bi-eye"></i>
+                    </a>
+                    <a href="{{ path('transaction_edit', {id: transaction.id}) }}" class="btn btn-outline-primary btn-sm" title="{{ 'button.edit'|trans }}">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <a href="{{ path('transaction_delete', {id: transaction.id}) }}" class="btn btn-outline-danger btn-sm" title="{{ 'button.delete'|trans }}">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">{{ 'message.empty_list'|trans }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if shouldShowSummary %}
+        <div class="mt-4 p-3 bg-light rounded shadow-sm">
+            <h5>{{ 'summary.title'|trans }}</h5>
+            <p>📈 {{ 'summary.income'|trans }}: <strong>{{ balanceData.income|number_format(2, '.', ' ') }} zł</strong></p>
+            <p>📉 {{ 'summary.expense'|trans }}: <strong>{{ balanceData.expense|number_format(2, '.', ' ') }} zł</strong></p>
+            <p>💰 {{ 'summary.balance'|trans }}: <strong>{{ balanceData.saldo|number_format(2, '.', ' ') }} zł</strong></p>
+        </div>
+    {% endif %}
+
+    {{ knp_pagination_render(pagination) }}
+{% endblock %}

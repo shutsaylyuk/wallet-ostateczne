@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pl" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Record list</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Record number #%id%</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="label.back_to_list">
+        <source>label.back_to_list</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>List is empty.</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Record not found.</target>
+      </trans-unit>
+      <trans-unit id="admin.email_updated_successfully">
+        <source>admin.email_updated_successfully</source>
+        <target>Email adress was succesfuly changed.</target>
+      </trans-unit>
+      <trans-unit id="admin.password_updated_successfully">
+        <source>admin.password_updated_successfully</source>
+        <target>Password was succesfuly changed.</target>
+      </trans-unit>
+      <trans-unit id="category.deleted_successfully">
+        <source>category.deleted_successfully</source>
+        <target>Category was succesfuly deleted.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.title">
+        <source>dashboard.title</source>
+        <target>Dashboard</target>
+      </trans-unit>
+      <trans-unit id="dashboard.greeting">
+        <source>dashboard.greeting</source>
+        <target>Hello %email%!</target>
+      </trans-unit>
+      <trans-unit id="dashboard.question">
+        <source>dashboard.question</source>
+        <target>What do you want to do?</target>
+      </trans-unit>
+      <trans-unit id="dashboard.transactions">
+        <source>dashboard.transactions</source>
+        <target>Transactions</target>
+      </trans-unit>
+      <trans-unit id="dashboard.wallets">
+        <source>dashboard.wallets</source>
+        <target>Wallets</target>
+      </trans-unit>
+      <trans-unit id="dashboard.categories">
+        <source>dashboard.categories</source>
+        <target>Category</target>
+      </trans-unit>
+
+
+<trans-unit id="login.heading">
+  <source>login.heading</source>
+  <target>Login form</target>
+</trans-unit>
+
+
+<trans-unit id="login.password">
+  <source>login.password</source>
+  <target>Password</target>
+</trans-unit>
+
+<trans-unit id="login.submit">
+  <source>login.submit</source>
+  <target>Login</target>
+</trans-unit>
+
+
+<trans-unit id="login.logout">
+  <source>login.logout</source>
+  <target>Logout</target>
+</trans-unit>
+
+<trans-unit id="login.remember_me">
+  <source>login.remember_me</source>
+  <target>Remember me</target>
+</trans-unit>
+<trans-unit id="transaction.created_successfully">
+  <source>transaction.created_successfully</source>
+  <target>Transaction was added.</target>
+</trans-unit>
+
+<trans-unit id="transaction.updated_successfully">
+  <source>transaction.updated_successfully</source>
+  <target>Transaction was updated.</target>
+</trans-unit>
+
+<trans-unit id="transaction.deleted_successfully">
+  <source>transaction.deleted_successfully</source>
+  <target>Transaction was deleted.</target>
+</trans-unit>
+<trans-unit id="wallet.created_successfully">
+  <source>wallet.created_successfully</source>
+  <target>Wallet was created.</target>
+</trans-unit>
+
+<trans-unit id="wallet.updated_successfully">
+  <source>wallet.updated_successfully</source>
+  <target>Wallet was updated.</target>
+</trans-unit>
+
+<trans-unit id="wallet.deleted_successfully">
+  <source>wallet.deleted_successfully</source>
+  <target>Wallet was deleted.</target>
+</trans-unit>
+
+<trans-unit id="wallet.invalid_token">
+  <source>wallet.invalid_token</source>
+  <target>Invalid token.</target>
+</trans-unit>
+
+<trans-unit id="wallet.delete_failed_due_to_transactions">
+  <source>wallet.delete_failed_due_to_transactions</source>
+  <target>Delete failed delete failed due to transactions</target>
+</trans-unit>
+<trans-unit id="form.admin_account.email">
+  <source>form.admin_account.email</source>
+  <target>Email adress:</target>
+</trans-unit>
+
+<trans-unit id="form.admin_account.email_not_blank">
+  <source>form.admin_account.email_not_blank</source>
+  <target>Emai can't be blank</target>
+</trans-unit>
+
+<trans-unit id="form.admin_account.password">
+  <source>form.admin_account.password</source>
+  <target>New password</target>
+</trans-unit>
+
+<trans-unit id="form.admin_account.password_min_length">
+  <source>form.admin_account.password_min_length</source>
+  <target>Password must have 6 signs.</target>
+</trans-unit>
+<trans-unit id="form.admin_email.email">
+  <source>form.admin_email.email</source>
+  <target>New email adress</target>
+</trans-unit>
+
+<trans-unit id="form.admin_email.email_not_blank">
+  <source>form.admin_email.email_not_blank</source>
+  <target>Emaill can't be blank.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_email.email_invalid">
+  <source>form.admin_email.email_invalid</source>
+  <target>Please enter a valid email address.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password">
+  <source>form.admin_password.password</source>
+  <target>New password</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password_not_blank">
+  <source>form.admin_password.password_not_blank</source>
+  <target>Password cannot be blank.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password_too_short">
+  <source>form.admin_password.password_too_short</source>
+  <target>Password must be at least 6 characters long.</target>
+</trans-unit>
+
+<trans-unit id="form.category.title">
+  <source>form.category.title</source>
+  <target>Category name</target>
+</trans-unit>
+
+<trans-unit id="form.category.title_not_blank">
+  <source>form.category.title_not_blank</source>
+  <target>Category name cannot be blank.</target>
+</trans-unit>
+
+<trans-unit id="form.transaction_filter.type">
+  <source>form.transaction_filter.type</source>
+  <target>Type</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.income">
+  <source>form.transaction_filter.income</source>
+  <target>Income</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.expense">
+  <source>form.transaction_filter.expense</source>
+  <target>Expense</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.wallet">
+  <source>form.transaction_filter.wallet</source>
+  <target>Wallet</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.category">
+  <source>form.transaction_filter.category</source>
+  <target>Category</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.date_from">
+  <source>form.transaction_filter.date_from</source>
+  <target>Date from</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.date_to">
+  <source>form.transaction_filter.date_to</source>
+  <target>Date to</target>
+</trans-unit>
+<trans-unit id="form.transaction_filter.all">
+  <source>form.transaction_filter.all</source>
+  <target>All</target>
+</trans-unit>
+
+<trans-unit id="form.transaction.amount">
+  <source>form.transaction.amount</source>
+  <target>Amount</target>
+</trans-unit>
+<trans-unit id="form.transaction.wallet">
+  <source>form.transaction.wallet</source>
+  <target>Wallet</target>
+</trans-unit>
+<trans-unit id="form.transaction.select_wallet">
+  <source>form.transaction.select_wallet</source>
+  <target>Select wallet</target>
+</trans-unit>
+<trans-unit id="form.transaction.category">
+  <source>form.transaction.category</source>
+  <target>Category</target>
+</trans-unit>
+<trans-unit id="form.transaction.select_category">
+  <source>form.transaction.select_category</source>
+  <target>Select category</target>
+</trans-unit>
+<trans-unit id="form.transaction.type">
+  <source>form.transaction.type</source>
+  <target>Transaction type</target>
+</trans-unit>
+<trans-unit id="form.transaction.income">
+  <source>form.transaction.income</source>
+  <target>Income</target>
+</trans-unit>
+<trans-unit id="form.transaction.expense">
+  <source>form.transaction.expense</source>
+  <target>Expense</target>
+</trans-unit>
+<trans-unit id="form.transaction.select_type">
+  <source>form.transaction.select_type</source>
+  <target>Select type</target>
+</trans-unit>
+
+<trans-unit id="category.updated_successfully">
+  <source>category.updated_successfully</source>
+  <target>Category was successfully updated.</target>
+</trans-unit>
+<trans-unit id="category.delete_failed_due_to_transactions">
+  <source>category.delete_failed_due_to_transactions</source>
+  <target>Cannot delete a category that has assigned transactions.</target>
+</trans-unit>
+<trans-unit id="category.created_successfully">
+  <source>category.created_successfully</source>
+  <target>Category was successfully created.</target>
+</trans-unit>
+
+<trans-unit id="error.insufficient_funds">
+  <source>error.insufficient_funds</source>
+  <target>Insufficient funds in the wallet!</target>
+</trans-unit>
+<trans-unit id="error.wallet_not_found">
+  <source>error.wallet_not_found</source>
+  <target>Wallet not found.</target>
+</trans-unit>
+<trans-unit id="error.wallet_delete_failed">
+  <source>error.wallet_delete_failed</source>
+  <target>Cannot delete a wallet that has transactions.</target>
+</trans-unit>
+
+<trans-unit id="admin.profile.title">
+  <source>admin.profile.title</source>
+  <target>Administrator Profile</target>
+</trans-unit>
+<trans-unit id="admin.profile.heading">
+  <source>admin.profile.heading</source>
+  <target>Edit administrator details</target>
+</trans-unit>
+<trans-unit id="admin.profile.change_email">
+  <source>admin.profile.change_email</source>
+  <target>Change email address</target>
+</trans-unit>
+<trans-unit id="admin.profile.save_email">
+  <source>admin.profile.save_email</source>
+  <target>Save</target>
+</trans-unit>
+
+<trans-unit id="admin.profile.change_password">
+  <source>admin.profile.change_password</source>
+  <target>Change password</target>
+</trans-unit>
+
+<trans-unit id="admin.profile.save_password">
+  <source>admin.profile.save_password</source>
+  <target>Change password</target>
+</trans-unit>
+
+<trans-unit id="password.change.title">
+  <source>password.change.title</source>
+  <target>Password change</target>
+</trans-unit>
+
+<trans-unit id="password.change.heading">
+  <source>password.change.heading</source>
+  <target>Change your password</target>
+</trans-unit>
+
+<trans-unit id="password.change.submit">
+  <source>password.change.submit</source>
+  <target>Save password</target>
+</trans-unit>
+
+<trans-unit id="user.list.title">
+  <source>user.list.title</source>
+  <target>User list</target>
+</trans-unit>
+
+<trans-unit id="user.list.heading">
+  <source>user.list.heading</source>
+  <target>Users</target>
+</trans-unit>
+
+<trans-unit id="user.list.id">
+  <source>user.list.id</source>
+  <target>ID</target>
+</trans-unit>
+
+<trans-unit id="user.list.email">
+  <source>user.list.email</source>
+  <target>Email</target>
+</trans-unit>
+
+<trans-unit id="user.list.roles">
+  <source>user.list.roles</source>
+  <target>Roles</target>
+</trans-unit>
+
+<trans-unit id="user.list.empty">
+  <source>user.list.empty</source>
+  <target>No users found.</target>
+</trans-unit>
+
+<trans-unit id="category.add.title">
+  <source>category.add.title</source>
+  <target>Add category</target>
+</trans-unit>
+
+<trans-unit id="category.add.heading">
+  <source>category.add.heading</source>
+  <target>Add new category</target>
+</trans-unit>
+
+<trans-unit id="action.back_to_list">
+  <source>action.back_to_list</source>
+  <target>Back to list</target>
+</trans-unit>
+
+<trans-unit id="category.delete.title">
+  <source>category.delete.title</source>
+  <target>Delete category</target>
+</trans-unit>
+
+<trans-unit id="category.delete.heading">
+  <source>category.delete.heading</source>
+  <target>Confirm category deletion</target>
+</trans-unit>
+
+<trans-unit id="category.delete.confirmation">
+  <source>category.delete.confirmation</source>
+  <target>Are you sure you want to delete the category: %title%?</target>
+</trans-unit>
+
+<trans-unit id="action.confirm_delete">
+  <source>action.confirm_delete</source>
+  <target>Yes, delete</target>
+</trans-unit>
+
+<trans-unit id="action.cancel">
+  <source>action.cancel</source>
+  <target>Cancel</target>
+</trans-unit>
+
+<trans-unit id="category.edit.title">
+  <source>category.edit.title</source>
+  <target>Edit category</target>
+</trans-unit>
+
+<trans-unit id="category.new.title">
+  <source>category.new.title</source>
+  <target>Add category</target>
+</trans-unit>
+
+<trans-unit id="category.edit.heading">
+  <source>category.edit.heading</source>
+  <target>Edit category</target>
+</trans-unit>
+
+
+<trans-unit id="category.new.heading">
+  <source>category.new.heading</source>
+  <target>Add category</target>
+</trans-unit>
+
+<trans-unit id="category.index.title">
+  <source>category.index.title</source>
+  <target>Categories</target>
+</trans-unit>
+
+<trans-unit id="category.index.add">
+  <source>category.index.add</source>
+  <target>Add category</target>
+</trans-unit>
+
+<trans-unit id="category.index.actions">
+  <source>category.index.actions</source>
+  <target>Actions</target>
+</trans-unit>
+
+<trans-unit id="category.show.title">
+  <source>category.show.title</source>
+  <target>Category: %title%</target>
+</trans-unit>
+
+<trans-unit id="category.show.heading">
+  <source>category.show.heading</source>
+  <target>Category details: %title%</target>
+</trans-unit>
+
+<trans-unit id="category.show.created">
+  <source>category.show.created</source>
+  <target>Created</target>
+</trans-unit>
+
+<trans-unit id="category.show.updated">
+  <source>category.show.updated</source>
+  <target>Updated</target>
+</trans-unit>
+
+<trans-unit id="action.back">
+  <source>action.back</source>
+  <target>Back</target>
+</trans-unit>
+
+<trans-unit id="login.title">
+  <source>login.title</source>
+  <target>Login</target>
+</trans-unit>
+
+<trans-unit id="login.username">
+  <source>login.username</source>
+  <target>Email address</target>
+</trans-unit>
+
+<trans-unit id="login.logged_in_as">
+  <source>login.logged_in_as</source>
+  <target>Logged in as %user%</target>
+</trans-unit>
+
+<trans-unit id="transaction.create.title">
+  <source>transaction.create.title</source>
+  <target>Add transaction</target>
+</trans-unit>
+
+<trans-unit id="transaction.create.heading">
+  <source>transaction.create.heading</source>
+  <target>Add transaction</target>
+</trans-unit>
+
+<trans-unit id="button.save">
+  <source>button.save</source>
+  <target>Save</target>
+</trans-unit>
+
+<trans-unit id="transaction.edit.title">
+  <source>transaction.edit.title</source>
+  <target>Edit transaction</target>
+</trans-unit>
+
+<trans-unit id="transaction.edit.heading">
+  <source>transaction.edit.heading</source>
+  <target>Edit transaction</target>
+</trans-unit>
+
+<trans-unit id="button.save_changes">
+  <source>button.save_changes</source>
+  <target>Save changes</target>
+</trans-unit>
+
+
+<trans-unit id="transaction.index.title"><source>transaction.index.title</source><target>Transaction list</target></trans-unit>
+<trans-unit id="transaction.index.heading"><source>transaction.index.heading</source><target>Transactions</target></trans-unit>
+<trans-unit id="button.filter"><source>button.filter</source><target>Filter</target></trans-unit>
+<trans-unit id="button.add_transaction"><source>button.add_transaction</source><target>Add transaction</target></trans-unit>
+<trans-unit id="label.amount"><source>label.amount</source><target>Amount</target></trans-unit>
+<trans-unit id="label.type"><source>label.type</source><target>Type</target></trans-unit>
+<trans-unit id="label.category"><source>label.category</source><target>Category</target></trans-unit>
+<trans-unit id="label.wallet"><source>label.wallet</source><target>Wallet</target></trans-unit>
+<trans-unit id="label.created_at"><source>label.created_at</source><target>Date</target></trans-unit>
+<trans-unit id="button.show"><source>button.show</source><target>Show</target></trans-unit>
+<trans-unit id="button.edit"><source>button.edit</source><target>Edit</target></trans-unit>
+<trans-unit id="button.delete"><source>button.delete</source><target>Delete</target></trans-unit>
+<trans-unit id="summary.title"><source>summary.title</source><target>Summary of results:</target></trans-unit>
+<trans-unit id="summary.income"><source>summary.income</source><target>Income</target></trans-unit>
+<trans-unit id="summary.expense"><source>summary.expense</source><target>Expenses</target></trans-unit>
+<trans-unit id="summary.balance"><source>summary.balance</source><target>Balance</target></trans-unit>
+<trans-unit id="transaction.show.title"><source>transaction.show.title</source><target>Transaction preview</target></trans-unit>
+<trans-unit id="transaction.show.heading"><source>transaction.show.heading</source><target>Transaction</target></trans-unit>
+<trans-unit id="label.updated_at"><source>label.updated_at</source><target>Updated</target></trans-unit>
+
+<trans-unit id="title.wallet_create"><source>title.wallet_create</source><target>Add wallet</target></trans-unit>
+<trans-unit id="action.save"><source>action.save</source><target>Save</target></trans-unit>
+<trans-unit id="button.back_to_list"><source>button.back_to_list</source><target>Back to list</target></trans-unit>
+<trans-unit id="wallet.delete_title"><source>wallet.delete_title</source><target>Delete wallet</target></trans-unit>
+<trans-unit id="wallet.delete_confirm_title"><source>wallet.delete_confirm_title</source><target>Are you sure you want to delete this wallet?</target></trans-unit>
+<trans-unit id="wallet.confirm_delete"><source>wallet.confirm_delete</source><target>Yes, delete</target></trans-unit>
+<trans-unit id="button.cancel"><source>button.cancel</source><target>Cancel</target></trans-unit>
+
+<trans-unit id="wallet.balance"><source>wallet.balance</source><target>Balance</target></trans-unit>
+<trans-unit id="wallet.edit_title"><source>wallet.edit_title</source><target>Edit wallet</target></trans-unit>
+<trans-unit id="wallet.edit_heading"><source>wallet.edit_heading</source><target>Edit wallet</target></trans-unit>
+<trans-unit id="action.save_changes"><source>action.save_changes</source><target>Save changes</target></trans-unit>
+<trans-unit id="wallet.index_title"><source>wallet.index_title</source><target>Your wallets</target></trans-unit>
+<trans-unit id="wallet.index_heading"><source>wallet.index_heading</source><target>Your wallets</target></trans-unit>
+<trans-unit id="wallet.total_balance"><source>wallet.total_balance</source><target>Total wallet balance</target></trans-unit>
+<trans-unit id="wallet.action_add"><source>wallet.action_add</source><target>Add wallet</target></trans-unit>
+<trans-unit id="wallet.name"><source>wallet.name</source><target>Name</target></trans-unit>
+<trans-unit id="wallet.empty"><source>wallet.empty</source><target>No wallets.</target></trans-unit>
+
+<trans-unit id="action.edit"><source>action.edit</source><target>Edit</target></trans-unit>
+<trans-unit id="action.delete"><source>action.delete</source><target>Delete</target></trans-unit>
+<trans-unit id="wallet.show_title"><source>wallet.show_title</source><target>Wallet details</target></trans-unit>
+<trans-unit id="wallet.created_at"><source>wallet.created_at</source><target>Created</target></trans-unit>
+<trans-unit id="wallet.updated_at"><source>wallet.updated_at</source><target>Last updated</target></trans-unit>
+
+<trans-unit id="base.title"><source>base.title</source><target>Wallet management</target></trans-unit>
+<trans-unit id="nav.brand"><source>nav.brand</source><target>Wallet</target></trans-unit>
+<trans-unit id="nav.transactions"><source>nav.transactions</source><target>Transactions</target></trans-unit>
+<trans-unit id="nav.wallets"><source>nav.wallets</source><target>Wallets</target></trans-unit>
+<trans-unit id="nav.categories"><source>nav.categories</source><target>Categories</target></trans-unit>
+<trans-unit id="nav.users"><source>nav.users</source><target>Users</target></trans-unit>
+<trans-unit id="nav.profile"><source>nav.profile</source><target>Profile</target></trans-unit>
+<trans-unit id="nav.logout"><source>nav.logout</source><target>Logout</target></trans-unit>
+
+<trans-unit id="category.index.heading"><source>category.index.heading</source><target>Category list</target></trans-unit>
+<trans-unit id="category.index.name"><source>category.index.name</source><target>Name</target></trans-unit>
+<trans-unit id="category.index.empty"><source>category.index.empty</source><target>No categories to display.</target></trans-unit>
+<trans-unit id="action.show"><source>action.show</source><target>Show</target></trans-unit>
+<trans-unit id="email.change.title">
+  <source>email.change.title</source>
+  <target>Email Address Change</target>
+</trans-unit>
+
+<trans-unit id="email.change.heading">
+  <source>email.change.heading</source>
+  <target>Enter your new email address</target>
+</trans-unit>
+
+<trans-unit id="email.change.submit">
+  <source>email.change.submit</source>
+  <target>Change Email</target>
+</trans-unit>
+
+<trans-unit id="message.form_error">
+  <source>message.form_error</source>
+  <target>There were errors in the form.</target>
+</trans-unit>
+
+<trans-unit id="transaction.delete.title">
+  <source>transaction.delete.title</source>
+  <target>Delete Transaction</target>
+</trans-unit>
+
+<trans-unit id="transaction.delete.heading">
+  <source>transaction.delete.heading</source>
+  <target>Are you sure you want to delete this transaction?</target>
+</trans-unit>
+
+<trans-unit id="transaction.delete.confirmation">
+  <source>transaction.delete.confirmation</source>
+  <target>This action cannot be undone.</target>
+</trans-unit>
+
+<trans-unit id="button.confirm_delete">
+  <source>button.confirm_delete</source>
+  <target>Delete</target>
+</trans-unit>
+
+<trans-unit id="button.back">
+  <source>button.back</source>
+  <target>Back</target>
+</trans-unit>
+<trans-unit id="form.wallet.name">
+  <source>form.wallet.name</source>
+  <target>Wallet name</target>
+</trans-unit>
+
+<trans-unit id="form.wallet.balance">
+  <source>form.wallet.balance</source>
+  <target>Balance</target>
+</trans-unit>
+<trans-unit id="form.user.email">
+  <source>form.user.email</source>
+  <target>Email</target>
+</trans-unit>
+<trans-unit id="form.user.password">
+  <source>form.user.password</source>
+  <target>New password</target>
+</trans-unit>
+<trans-unit id="Adres e-mail">
+    <source>Adres e-mail</source>
+    <target>Email</target>
+</trans-unit>
+
+<trans-unit id="Nowe hasło">
+    <source>Nowe hasło</source>
+    <target>New password</target>
+</trans-unit>
+<trans-unit id="category.create.title">
+  <source>category.create.title</source>
+  <target>Create New Category</target>
+</trans-unit>
+<trans-unit id="category.create.heading">
+  <source>category.create.heading</source>
+  <target>Category Creation Form</target>
+</trans-unit>
+<trans-unit id="Nazwa kategorii">
+  <source>Nazwa kategorii</source>
+  <target>Category name</target>
+</trans-unit>
+
+
+    </body>
+  </file>
+</xliff>

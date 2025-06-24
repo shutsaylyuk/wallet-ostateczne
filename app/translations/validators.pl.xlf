@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+       xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="pl" datatype="plaintext" original="validators">
+    <body>
+<trans-unit id="form.admin_account.email_not_blank">
+  <source>form.admin_account.email_not_blank</source>
+  <target>Adres e-mail nie może być pusty.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_account.password_min_length">
+  <source>form.admin_account.password_min_length</source>
+  <target>Hasło musi mieć co najmniej 8 znaków.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_email.email_not_blank">
+  <source>form.admin_email.email_not_blank</source>
+  <target>Wprowadź adres e-mail.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_email.email_invalid">
+  <source>form.admin_email.email_invalid</source>
+  <target>Nieprawidłowy adres e-mail.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password_not_blank">
+  <source>form.admin_password.password_not_blank</source>
+  <target>Wprowadź hasło.</target>
+</trans-unit>
+
+<trans-unit id="form.admin_password.password_too_short">
+  <source>form.admin_password.password_too_short</source>
+  <target>Hasło jest za krótkie.</target>
+</trans-unit>
+
+<trans-unit id="form.category.title_not_blank">
+  <source>form.category.title_not_blank</source>
+  <target>Tytuł nie może być pusty.</target>
+</trans-unit>
+ <trans-unit id="category.updated_successfully">
+        <source>category.updated_successfully</source>
+        <target>Kategoria została pomyślnie zaktualizowana.</target>
+      </trans-unit>
+
+      <trans-unit id="category.delete_failed_due_to_transactions">
+        <source>category.delete_failed_due_to_transactions</source>
+        <target>Nie można usunąć kategorii, która ma przypisane transakcje.</target>
+      </trans-unit>
+<trans-unit id="category.created_successfully">
+  <source>category.created_successfully</source>
+  <target>Kategoria została pomyślnie utworzona.</target>
+</trans-unit>
+  </body>
+  </file>
+</xliff>

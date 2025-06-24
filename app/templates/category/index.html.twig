@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'category.index.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>{{ 'category.index.heading'|trans }}</h1>
+
+        <a href="{{ path('category_create') }}" class="btn btn-success mb-3">
+            <i class="bi bi-plus-circle"></i> {{ 'category.index.add'|trans }}
+        </a>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    {{ knp_pagination_sortable(pagination, 'category.index.name'|trans, 'c.title') }}
+                </th>
+                <th scope="col">{{ 'category.index.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in pagination %}
+                <tr>
+                    <td>{{ category.title }}</td>
+                    <td>
+                        <a href="{{ path('category_show', {id: category.id}) }}" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-eye"></i> {{ 'action.show'|trans }}
+                        </a>
+                        <a href="{{ path('category_edit', {id: category.id}) }}" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-pencil"></i> {{ 'action.edit'|trans }}
+                        </a>
+                        <a href="{{ path('category_delete', {id: category.id}) }}" class="btn btn-outline-danger btn-sm" title="{{ 'action.delete'|trans }}">
+                            <i class="bi bi-trash"></i> {{ 'action.delete'|trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">{{ 'category.index.empty'|trans }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

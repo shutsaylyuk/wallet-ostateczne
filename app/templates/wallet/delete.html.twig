@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'wallet.delete_title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4" style="max-width: 500px;">
+        <h2 class="mb-4 text-danger">{{ 'wallet.delete_confirm_title'|trans }}</h2>
+
+        <p>{{ 'wallet.name'|trans }}: <strong>{{ wallet.name }}</strong></p>
+        <p>{{ 'wallet.balance'|trans }}: {{ wallet.balance|number_format(2, '.', ' ') }} zł</p>
+
+        {{ form_start(form) }}
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ wallet.id) }}">
+        <button type="submit" class="btn btn-danger">
+            {{ 'wallet.confirm_delete'|trans }}
+        </button>
+        <a href="{{ path('wallet_index') }}" class="btn btn-secondary ms-2">
+            {{ 'button.cancel'|trans }}
+        </a>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

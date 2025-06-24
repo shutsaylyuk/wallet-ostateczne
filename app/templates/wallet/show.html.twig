@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'wallet.show_title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="mb-4">{{ wallet.name }}</h1>
+
+        <ul class="list-group mb-4">
+            <li class="list-group-item">
+                💰 {{ 'wallet.balance'|trans }}:
+                <strong>{{ wallet.balance|number_format(2, '.', ' ') }} zł</strong>
+            </li>
+            <li class="list-group-item">
+                📅 {{ 'wallet.created_at'|trans }}:
+                {{ wallet.createdAt ? wallet.createdAt|date('Y-m-d H:i') : '—' }}
+            </li>
+            <li class="list-group-item">
+                🕒 {{ 'wallet.updated_at'|trans }}:
+                {{ wallet.updatedAt ? wallet.updatedAt|date('Y-m-d H:i') : '—' }}
+            </li>
+        </ul>
+
+        <div class="d-flex gap-2">
+            <a href="{{ path('wallet_edit', {'id': wallet.id}) }}" class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i> {{ 'action.edit'|trans }}
+            </a>
+            <a href="{{ path('wallet_index') }}" class="btn btn-secondary">
+                ⬅️ {{ 'action.back_to_list'|trans }}
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'category.create.title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1 class="mb-4">{{ 'category.create.heading'|trans }}</h1>
+
+    <div class="card shadow-sm p-4 bg-white rounded">
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+
+        <div class="col-12">
+            {{ form_row(form.title, {
+                'label': 'form.category.title'|trans,
+                'attr': {'class': 'form-control'},
+                'label_attr': {'class': 'form-label fw-bold mb-1'}
+            }) }}
+        </div>
+
+        <div class="col-12 d-flex justify-content-between mt-3">
+            <a href="{{ path('category_index') }}" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left-circle"></i> {{ 'action.back_to_list'|trans }}
+            </a>
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> {{ 'action.save'|trans }}
+            </button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

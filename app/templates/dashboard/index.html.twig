@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'dashboard.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 text-center">
+        <h2 class="mb-4">{{ 'dashboard.greeting'|trans({'%email%': app.user.email}) }}</h2>
+        <p class="mb-4">{{ 'dashboard.question'|trans }}</p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{{ path('transaction_index') }}" class="btn btn-outline-primary btn-lg px-4">
+                {{ 'dashboard.transactions'|trans }}
+            </a>
+            <a href="{{ path('wallet_index') }}" class="btn btn-outline-success btn-lg px-4">
+                {{ 'dashboard.wallets'|trans }}
+            </a>
+            <a href="{{ path('category_index') }}" class="btn btn-outline-secondary btn-lg px-4">
+                {{ 'dashboard.categories'|trans }}
+            </a>
+        </div>
+    </div>
+{% endblock %}
