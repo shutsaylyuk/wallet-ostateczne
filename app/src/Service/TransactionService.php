@@ -75,8 +75,6 @@ class TransactionService implements TransactionServiceInterface
      * Saves transaction and updates wallet balance.
      *
      * @param Transaction $transaction Transaction entity
-     *
-     * @return void
      */
     public function save(Transaction $transaction): void
     {
@@ -112,8 +110,6 @@ class TransactionService implements TransactionServiceInterface
      * Deletes a transaction.
      *
      * @param Transaction $transaction Transaction entity
-     *
-     * @return void
      */
     public function delete(Transaction $transaction): void
     {
