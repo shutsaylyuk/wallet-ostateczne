@@ -44,6 +44,8 @@ services:
     depends_on:
       - maildev
       - mysql
+    dns:
+      - 8.8.8.8
 
   maildev:
     image: djfarrelly/maildev
