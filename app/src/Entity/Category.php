@@ -1,9 +1,8 @@
 <?php
 
 /**
- * This file is part of the Finanse project.
+ * Category Entity
  *
- * @author Sofiya Hutsaylyuk
  */
 
 declare(strict_types=1);
