@@ -36,4 +36,13 @@ interface CategoryServiceInterface
      * @param Category $category Category entity
      */
     public function delete(Category $category): void;
+
+    /**
+     * Checks whether the given category can be deleted (i.e., has no related transactions).
+     *
+     * @param Category $category The category to check
+     *
+     * @return bool True if the category can be safely deleted, false otherwise
+     */
+    public function canBeDeleted(Category $category): bool;
 }

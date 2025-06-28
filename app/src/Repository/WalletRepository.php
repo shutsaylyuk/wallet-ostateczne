@@ -57,4 +57,19 @@ class WalletRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    /**
+     * Returns a query builder for fetching wallets that belong to a given user.
+     *
+     * @param User $user The user whose wallets should be queried
+     *
+     * @return QueryBuilder The configured Doctrine query builder
+     */
+    public function getWalletsForUserQueryBuilder(User $user): QueryBuilder
+    {
+        return $this->createQueryBuilder('w')
+            ->where('w.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('w.name', 'ASC');
+    }
 }

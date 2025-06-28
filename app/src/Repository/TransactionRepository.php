@@ -149,4 +149,38 @@ class TransactionRepository extends ServiceEntityRepository
         $this->getEntityManager()->remove($transaction);
         $this->getEntityManager()->flush();
     }
+
+    /**
+     * Checks whether there are any transactions in the given category.
+     *
+     * @param Category $category The category to check
+     *
+     * @return bool True if transactions exist, false otherwise
+     */
+    public function hasTransactionsInCategory(Category $category): bool
+    {
+        return $this->createQueryBuilder('t')
+                ->select('COUNT(t.id)')
+                ->where('t.category = :category')
+                ->setParameter('category', $category)
+                ->getQuery()
+                ->getSingleScalarResult() > 0;
+    }
+
+    /**
+     * Checks whether there are any transactions in the given wallet.
+     *
+     * @param Wallet $wallet The wallet to check
+     *
+     * @return bool True if transactions exist, false otherwise
+     */
+    public function hasTransactionsInWallet(Wallet $wallet): bool
+    {
+        return $this->createQueryBuilder('t')
+                ->select('COUNT(t.id)')
+                ->where('t.wallet = :wallet')
+                ->setParameter('wallet', $wallet)
+                ->getQuery()
+                ->getSingleScalarResult() > 0;
+    }
 }

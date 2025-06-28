@@ -63,4 +63,13 @@ interface WalletServiceInterface
      * @return Wallet[] array of Wallet entities
      */
     public function getByUser(User $user): array;
+
+    /**
+     * Checks whether the given wallet can be deleted (i.e., has no related transactions).
+     *
+     * @param Wallet $wallet The wallet to check
+     *
+     * @return bool True if the wallet can be safely deleted, false otherwise
+     */
+    public function canBeDeleted(Wallet $wallet): bool;
 }

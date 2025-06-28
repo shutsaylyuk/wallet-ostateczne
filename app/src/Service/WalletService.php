@@ -8,10 +8,12 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Entity\Wallet;
 use App\Entity\User;
+use App\Entity\Wallet;
+use App\Repository\TransactionRepository;
 use App\Repository\WalletRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\QueryBuilder;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -26,21 +28,34 @@ class WalletService implements WalletServiceInterface
     /**
      * Constructor.
      *
-     * @param WalletRepository       $walletRepository repository for wallet entity
-     * @param EntityManagerInterface $entityManager    doctrine entity manager
-     * @param PaginatorInterface     $paginator        paginator for list handling
+     * @param WalletRepository       $walletRepository      Repository for wallet entity
+     * @param EntityManagerInterface $entityManager         Doctrine entity manager
+     * @param TransactionRepository  $transactionRepository Repository for transactions
+     * @param PaginatorInterface     $paginator             KNP paginator
      */
-    public function __construct(private readonly WalletRepository $walletRepository, private readonly EntityManagerInterface $entityManager, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly WalletRepository $walletRepository, private readonly EntityManagerInterface $entityManager, private readonly TransactionRepository $transactionRepository, private readonly PaginatorInterface $paginator)
     {
+    }
+
+    /**
+     * Checks whether the given wallet can be deleted (i.e., has no related transactions).
+     *
+     * @param Wallet $wallet The wallet to check
+     *
+     * @return bool True if deletable, false otherwise
+     */
+    public function canBeDeleted(Wallet $wallet): bool
+    {
+        return !$this->transactionRepository->hasTransactionsInWallet($wallet);
     }
 
     /**
      * Returns a paginated list of wallets belonging to the given user.
      *
-     * @param User $user the user whose wallets are listed
-     * @param int  $page the page number to retrieve
+     * @param User $user The user whose wallets are listed
+     * @param int  $page The page number to retrieve
      *
-     * @return PaginationInterface paginated wallets list
+     * @return PaginationInterface Paginated wallets list
      */
     public function getPaginatedList(User $user, int $page): PaginationInterface
     {
@@ -55,12 +70,12 @@ class WalletService implements WalletServiceInterface
     /**
      * Returns a sorted and paginated list of wallets for the given user.
      *
-     * @param User        $user          the user whose wallets are listed
-     * @param int         $page          the current page for pagination
-     * @param string|null $sortField     Optional sort field (e.g. "name", "createdAt").
-     * @param string|null $sortDirection optional direction ("asc" or "desc")
+     * @param User        $user          The user whose wallets are listed
+     * @param int         $page          The current page for pagination
+     * @param string|null $sortField     Optional sort field (e.g. "name", "createdAt")
+     * @param string|null $sortDirection Optional direction ("asc" or "desc")
      *
-     * @return PaginationInterface the sorted and paginated wallet list
+     * @return PaginationInterface The sorted and paginated wallet list
      */
     public function getSortedPaginatedList(User $user, int $page, ?string $sortField = null, ?string $sortDirection = 'asc'): PaginationInterface
     {
@@ -80,7 +95,7 @@ class WalletService implements WalletServiceInterface
     /**
      * Saves the provided wallet entity to the database.
      *
-     * @param Wallet $wallet the wallet to persist
+     * @param Wallet $wallet The wallet to persist
      */
     public function save(Wallet $wallet): void
     {
@@ -91,7 +106,7 @@ class WalletService implements WalletServiceInterface
     /**
      * Deletes the provided wallet entity from the database.
      *
-     * @param Wallet $wallet the wallet to remove
+     * @param Wallet $wallet The wallet to remove
      */
     public function delete(Wallet $wallet): void
     {
@@ -102,12 +117,24 @@ class WalletService implements WalletServiceInterface
     /**
      * Returns all wallets associated with the given user.
      *
-     * @param User $user the user whose wallets are fetched
+     * @param User $user The user whose wallets are fetched
      *
-     * @return Wallet[] list of the user's wallets
+     * @return Wallet[] List of the user's wallets
      */
     public function getByUser(User $user): array
     {
         return $this->walletRepository->findBy(['user' => $user]);
+    }
+
+    /**
+     * Returns query builder for user wallets.
+     *
+     * @param User $user The user whose wallets are queried
+     *
+     * @return QueryBuilder Doctrine query builder for wallets
+     */
+    public function getWalletsForUserQueryBuilder(User $user): QueryBuilder
+    {
+        return $this->walletRepository->getWalletsForUserQueryBuilder($user);
     }
 }

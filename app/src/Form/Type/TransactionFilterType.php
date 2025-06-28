@@ -11,7 +11,7 @@ namespace App\Form\Type;
 use App\Entity\Category;
 use App\Entity\User;
 use App\Entity\Wallet;
-use App\Repository\WalletRepository;
+use App\Service\WalletService;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -24,6 +24,18 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class TransactionFilterType extends AbstractType
 {
+    private WalletService $walletService;
+
+    /**
+     * Constructor.
+     *
+     * @param WalletService $walletService wallet service for user-specific wallet filtering
+     */
+    public function __construct(WalletService $walletService)
+    {
+        $this->walletService = $walletService;
+    }
+
     /**
      * Builds the filter form for transactions.
      *
@@ -51,10 +63,7 @@ class TransactionFilterType extends AbstractType
                 'required' => false,
                 'label' => 'form.transaction_filter.wallet',
                 'placeholder' => 'form.transaction_filter.all',
-                'query_builder' => fn (WalletRepository $repo) => $repo->createQueryBuilder('w')
-                    ->where('w.user = :user')
-                    ->setParameter('user', $user)
-                    ->orderBy('w.name', 'ASC'),
+                'query_builder' => fn () => $this->walletService->getWalletsForUserQueryBuilder($user),
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,

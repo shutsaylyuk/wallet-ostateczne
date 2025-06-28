@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Category Entity
- *
+ * Category Entity.
  */
 
 declare(strict_types=1);
@@ -72,7 +71,7 @@ class Category implements \Stringable
      *
      * @param string $title Title
      *
-     * @return static
+     * @return self
      */
     public function setTitle(string $title): static
     {
@@ -96,7 +95,7 @@ class Category implements \Stringable
      *
      * @param \DateTimeImmutable $createdAt Created at
      *
-     * @return static
+     * @return self
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
@@ -118,9 +117,9 @@ class Category implements \Stringable
     /**
      * Setter for updatedAt.
      *
-     * @param \DateTimeImmutable $updatedAt Updated at
+     * @param DateTimeInterface $updatedAt Updated At
      *
-     * @return static
+     * @return self
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {

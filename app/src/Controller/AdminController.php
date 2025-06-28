@@ -11,12 +11,11 @@ use App\Entity\User;
 use App\Form\Type\AdminEmailType;
 use App\Form\Type\AdminPasswordType;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Service\AdminService;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -29,23 +28,22 @@ class AdminController extends AbstractController
     /**
      * Constructor.
      *
-     * @param TranslatorInterface $translator Translator service
+     * @param TranslatorInterface $translator   Translator service
+     * @param AdminService        $adminService Service handling admin operations
      */
-    public function __construct(private readonly TranslatorInterface $translator)
+    public function __construct(private readonly TranslatorInterface $translator, private readonly AdminService $adminService)
     {
     }
 
     /**
      * Displays and processes account settings (email and password change) for admin.
      *
-     * @param Request                     $request        HTTP request
-     * @param EntityManagerInterface      $em             Doctrine entity manager
-     * @param UserPasswordHasherInterface $passwordHasher Password hasher
+     * @param Request $request HTTP request
      *
      * @return Response HTTP response
      */
     #[\Symfony\Component\Routing\Attribute\Route('/admin/account', name: 'admin_account', methods: ['GET', 'POST'])]
-    public function accountSettings(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
+    public function accountSettings(Request $request): Response
     {
         /** @var User $user */
         $user = $this->getUser();
@@ -53,7 +51,7 @@ class AdminController extends AbstractController
         $emailForm = $this->createForm(AdminEmailType::class, $user);
         $emailForm->handleRequest($request);
         if ($emailForm->isSubmitted() && $emailForm->isValid() && $request->request->has('email_submit')) {
-            $em->flush();
+            $this->adminService->updateEmail($user);
             $this->addFlash('success', $this->translator->trans('admin.email_updated_successfully'));
 
             return $this->redirectToRoute('admin_account');
@@ -63,8 +61,7 @@ class AdminController extends AbstractController
         $passwordForm->handleRequest($request);
         if ($passwordForm->isSubmitted() && $passwordForm->isValid() && $request->request->has('password_submit')) {
             $plainPassword = $passwordForm->get('plainPassword')->getData();
-            $user->setPassword($passwordHasher->hashPassword($user, $plainPassword));
-            $em->flush();
+            $this->adminService->updatePassword($user, $plainPassword);
 
             $this->addFlash('success', $this->translator->trans('admin.password_updated_successfully'));
 

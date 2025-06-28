@@ -1,10 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
-/**
- * Security controller.
+/*
+ * Security Controller
+ *
  */
+declare(strict_types=1);
 
 namespace App\Controller;
 
@@ -15,12 +15,12 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
- * Class SecurityController.
+ * Controller responsible for user authentication.
  */
 class SecurityController extends AbstractController
 {
     /**
-     * Login action.
+     * Displays the login form and handles authentication errors.
      *
      * @param AuthenticationUtils $authenticationUtils Authentication utilities
      *
@@ -33,10 +33,7 @@ class SecurityController extends AbstractController
             return $this->redirectToRoute('app_dashboard');
         }
 
-        // Get the login error, if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-
-        // Last entered username
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
@@ -46,11 +43,11 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Logout action.
+     * This route is handled by the security system; the method should remain empty.
      */
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        throw new \LogicException('This method can be blank - it is intercepted by the firewall logout mechanism.');
     }
 }

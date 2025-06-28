@@ -10,6 +10,7 @@ namespace App\Service;
 
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use App\Repository\TransactionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -27,11 +28,12 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository     $categoryRepository Category repository
-     * @param EntityManagerInterface $entityManager      Doctrine entity manager
-     * @param PaginatorInterface     $paginator          KNP paginator
+     * @param CategoryRepository     $categoryRepository    Category repository
+     * @param EntityManagerInterface $entityManager         Doctrine entity manager
+     * @param PaginatorInterface     $paginator             KNP paginator
+     * @param TransactionRepository  $transactionRepository Transaction repository
      */
-    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly EntityManagerInterface $entityManager, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly EntityManagerInterface $entityManager, private readonly PaginatorInterface $paginator, private readonly TransactionRepository $transactionRepository)
     {
     }
 
@@ -77,5 +79,17 @@ class CategoryService implements CategoryServiceInterface
     {
         $this->entityManager->remove($category);
         $this->entityManager->flush();
+    }
+
+    /**
+     * Checks if a category can be deleted (i.e., has no related transactions).
+     *
+     * @param Category $category Category to check
+     *
+     * @return bool True if deletable, false otherwise
+     */
+    public function canBeDeleted(Category $category): bool
+    {
+        return !$this->transactionRepository->hasTransactionsInCategory($category);
     }
 }

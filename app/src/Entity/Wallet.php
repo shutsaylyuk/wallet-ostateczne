@@ -69,7 +69,7 @@ class Wallet implements \Stringable
      *
      * @param string $name Wallet name
      *
-     * @return static
+     * @return self
      */
     public function setName(string $name): static
     {
@@ -93,7 +93,7 @@ class Wallet implements \Stringable
      *
      * @param \DateTimeImmutable $createdAt Creation time
      *
-     * @return static
+     * @return self
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
@@ -117,7 +117,7 @@ class Wallet implements \Stringable
      *
      * @param \DateTimeImmutable $updatedAt Update time
      *
-     * @return static
+     * @return self
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
@@ -141,7 +141,7 @@ class Wallet implements \Stringable
      *
      * @param string $balance Wallet balance
      *
-     * @return static
+     * @return self
      */
     public function setBalance(string $balance): static
     {
@@ -165,7 +165,7 @@ class Wallet implements \Stringable
      *
      * @param User|null $user Wallet owner
      *
-     * @return static
+     * @return self
      */
     public function setUser(?User $user): static
     {

@@ -129,7 +129,7 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $transactions = $transactionRepository->findBy(['category' => $category]);
 
-            if (!empty($transactions)) {
+            if (!$this->categoryService->canBeDeleted($category)) {
                 $this->addFlash('danger', 'category.delete_failed_due_to_transactions');
 
                 return $this->redirectToRoute('category_index');

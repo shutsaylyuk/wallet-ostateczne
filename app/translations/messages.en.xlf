@@ -658,7 +658,10 @@
   <source>Nazwa kategorii</source>
   <target>Category name</target>
 </trans-unit>
-
+<trans-unit id="Hasło zostało pomyślnie zmienione.">
+  <source>Hasło zostało pomyślnie zmienione.</source>
+  <target>Password succesfuly changed.</target>
+</trans-unit>
 
     </body>
   </file>
