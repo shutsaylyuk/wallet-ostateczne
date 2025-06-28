@@ -778,7 +778,10 @@
   <source>Hasło zostało pomyślnie zmienione.</source>
   <target>Hasło zostało pomyślnie zmienione.</target>
 </trans-unit>
-
+<trans-unit id="Adres e-mail został pomyślnie zmieniony.">
+  <source>Adres e-mail został pomyślnie zmieniony.</source>
+  <target>Adres e-mail został pomyślnie zmieniony.</target>
+</trans-unit>
     </body>
   </file>
 </xliff>

@@ -662,6 +662,10 @@
   <source>Hasło zostało pomyślnie zmienione.</source>
   <target>Password succesfuly changed.</target>
 </trans-unit>
+<trans-unit id="Adres e-mail został pomyślnie zmieniony.">
+  <source>Adres e-mail został pomyślnie zmieniony.</source>
+  <target>Email adress succesfuly changed.</target>
+</trans-unit>
 
     </body>
   </file>
