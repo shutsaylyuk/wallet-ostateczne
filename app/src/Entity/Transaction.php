@@ -63,7 +63,7 @@ class Transaction
      *
      * @param int $id Transaction ID
      *
-     * @return static
+     * @return $this
      */
     public function setId(int $id): static
     {
@@ -87,7 +87,7 @@ class Transaction
      *
      * @param string $amount Transaction amount
      *
-     * @return static
+     * @return $this
      */
     public function setAmount(string $amount): static
     {
@@ -111,7 +111,7 @@ class Transaction
      *
      * @param \DateTimeImmutable $createdAt Created at
      *
-     * @return static
+     * @return $this
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
@@ -135,7 +135,7 @@ class Transaction
      *
      * @param \DateTimeImmutable $updatedAt Updated at
      *
-     * @return static
+     * @return $this
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
@@ -159,7 +159,7 @@ class Transaction
      *
      * @param Wallet|null $wallet Wallet entity
      *
-     * @return static
+     * @return $this
      */
     public function setWallet(?Wallet $wallet): static
     {
@@ -183,7 +183,7 @@ class Transaction
      *
      * @param Category|null $category Category entity
      *
-     * @return static
+     * @return $this
      */
     public function setCategory(?Category $category): static
     {
@@ -207,7 +207,7 @@ class Transaction
      *
      * @param string $type Transaction type
      *
-     * @return static
+     * @return $this
      */
     public function setType(string $type): static
     {
