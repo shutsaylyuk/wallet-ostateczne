@@ -13,7 +13,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 /**
  * Service class responsible for handling admin-related operations.
  */
-class AdminService
+class AdminService implements AdminServiceInterface
 {
     /**
      * Constructor.
